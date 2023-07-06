@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Derivative Calculator</title>
+        <meta name="description" content="Derivative calculator.">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" id="MathJS-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.4/math.min.js"></script>
+        <script type="text/javascript" charset="UTF-8"
+            src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"></script>
+        <link rel="stylesheet" 
+            type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css" />
+        <script src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    
+    <body>
+        <div id="header">
+            
+        </div>
+        <div id="container">
+            
+           
+            <form id="input_form">
+                <p>Note: USE csc instead of COSEC and () must be used for trig functions i.e csc(x)<br><br>
+                    Made by <a href="https://www.linkedin.com/in/safal808" target=”_blank”>Safal</a></p> 
+                <div id="equation_submit">
+                    <input id="eq_input" type="text" placeholder="Enter your expression" 
+                            autocomplete=off>
+                    <input type="submit" id="eq_submit" value="Calculate">
+                </div>
+                <br>
+                
+                <div id="ops">
+                    <input type="radio" id="simplify_check" name="op">
+                    <label for="simplify_check">Simplify</label>
+                    <input type="radio" id="differentiate_check" name="op" checked>
+                    <label for="differentiate_check">Differentiate</label>
+                </div>
+                <br>
+
+                <div id="options">
+                    <label>Order: </label>
+                    <input class="option_in" type="number" id="order_input" value=1 
+                           min=1 max=10 autocomplete=off>
+                           <br><br>
+                    <label>With respect to: </label>
+                    <input class="option_in" type="text" id="wrt_input" value=x
+                           autocomplete=off>
+                </div>
+                <br>
+            </form>
+            <p id="input_title" class="title">INPUT</p>
+            <p id="input_display" class="mathjax">$$undefined$$</p>
+            <ul id="results">
+            </ul>
+            <div id="graph_view">
+                <div id="graph" class="jxgbox"></div>
+                <ul id="graph_options"></ul>
+                <div id="graph_overlay">
+                    <p id="graph_overlay_text" class="error"></p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
