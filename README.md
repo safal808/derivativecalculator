@@ -29,10 +29,6 @@ This is a derivative calculator web application that allows users to calculate d
 6. The result will be displayed along with the input expression and any additional results.
 7. The graph view shows an interactive graph of the function and its derivative (if available).
 
-## Author
-
-This derivative calculator was made by Safal. You can find me on LinkedIn: [Safal's LinkedIn Profile](https://www.linkedin.com/in/safal808)
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
