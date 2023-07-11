@@ -10,15 +10,25 @@ body {
   width: 80%;
   margin: auto;
   margin-top: 50px;
-  text-align: center;
+  display: flex;
+}
+
+#input_form {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#equation_submit {
+  display: flex;
+  align-items: center;
 }
 
 #eq_input {
-  width: 60%;
+  flex: 1;
   border-radius: 12px;
   background-color: #f1f1f1;
   border: 1px solid transparent;
-  margin-left: 10px;
+  margin-right: 10px;
   padding: 10px;
   font-size: 16px;
 }
@@ -35,18 +45,13 @@ body {
   text-decoration: none;
 }
 
-.option_in {
-  width: 50px;
-  margin-bottom: 10px;
+#ops {
+  display: flex;
+  align-items: center;
 }
 
-.mathjax {
-  width: 50%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: auto;
-  width: 100%;
-  font-size: 2em;
+#options {
+  margin-top: 10px;
 }
 
 .title {
@@ -54,60 +59,38 @@ body {
   width: 30%;
 }
 
-.subtitle {
-  margin: auto;
-  width: 20%;
-  font-size: 0.8em;
-}
-
-.subtitle:before,
-.subtitle:after,
-.title:before,
-.title:after {
-  content: "";
-  display: inline-block;
-  width: 50%;
-  margin: 0 .5em 0 -55%;
-  vertical-align: middle;
-  border-bottom: 1px solid;
-}
-
-.subtitle:after,
-.title:after {
-  margin: 0 -55% 0 .5em;
+.mathjax {
+  margin-top: 20px;
+  font-size: 2em;
 }
 
 #results {
+  flex: 1;
   list-style-type: none;
-  /* hide bullets */
   padding: 0;
-  /* remove indent */
 }
 
 #graph_view {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: flex-start; /* Updated */
   position: relative;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 #graph {
-  display: none;
   width: 500px;
   height: 500px;
 }
 
 #graph_options {
   position: absolute;
-  left: 65%;
+  right: 0; /* Updated */
+  top: 0; /* Updated */
   list-style-type: none;
   padding: 0;
   vertical-align: top;
-}
-
-#graph,
-#graph_options {
-  justify-content: flex-start;
 }
 
 #graph_overlay {
@@ -116,6 +99,7 @@ body {
   width: 500px;
   height: 500px;
   background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1; /* Added */
 }
 
 #graph_overlay_text {
@@ -129,102 +113,12 @@ body {
   font-size: 1.3em;
 }
 
-.option_li {
-  text-align: left;
+.option_in {
+  width: 50px;
+  margin-bottom: 10px;
 }
 
-#order_input {
-  border-radius: 5px;
-  padding-left: 10px;
-  border: none;
-  width: 70px;
-  height: 30px;
-}
-
-#wrt_input {
-  border-radius: 5px;
-  padding-left: 10px;
-  border: none;
-  width: 70px;
-  height: 30px;
-}
-
-/* Responsive Styles */
-
-@media (max-width: 768px) {
-  #eq_input {
-    width: 80%;
-  }
-
-  #container {
-    width: 90%;
-  }
-
- #input_form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #equation_submit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #order_input,
-  #wrt_input {
-    width: 100%;
-  }
-
-  .title {
-    width: 100%;
-  }
-
-  .subtitle {
-    width: 100%;
-  }
-
-  #graph {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    max-height: 500px;
-  }
-
-  #graph_options {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media (max-width: 768px) {
-    #eq_input {
-      width: 100%;
-    }
-
-    #container {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .title {
-      font-size: 1.5em;
-    }
-
-    .subtitle {
-      font-size: 0.6em;
-    }
-  }
-}
-a{
+a {
   text-decoration: none;
   color: #c70039;
 }
